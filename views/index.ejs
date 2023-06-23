@@ -1,11 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('./partials/header') %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Card</th>
+      <th>Sport</th>
+      <th>Year</th>
+      <th>Brand</th>
+      <th>Co.</th>
+      <th>Grade</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cards.forEach(function(c) { %>
+
+      <tr>
+        <td><a href="/<%= c.id %>"><%= `${c.year} ${c.manufacturer} ${c.firstName} ${c.lastName} ${c.gradingCo} ${c.grade}` %></a></td>
+        <td><%= c.sport %></td>
+        <td><%= c.year %></td>
+        <td><%= c.manufacturer %></td>
+        <td><%= c.gradingCo %></td>
+        <td><%= c.grade %></td>
+        <td><%= c.quantity %></td>
+        <td><%= c.price %></td>
+        <td><button type="submit">Edit</button></td>
+      </tr>
+   <% }) %>
+  </tbody>
+</table>
+
+<%- include('./partials/footer') %>

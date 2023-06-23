@@ -1,0 +1,74 @@
+<%- include('./partials/header') %>
+
+<form action="/" method="POST">
+    <h3>Player:</h3>
+    <label>First:
+        <input type="text" name="firstName">
+    </label><br>
+    <label>Last:
+        <input type="text" name="lastName">
+    </label><br>
+    <h3>Card Info:</h3>
+    <label>Year:
+        <input type="text" name="year">
+    </label>
+    <label>Manufacturer:
+        <select name="manufacturer">
+            <option value="Topps">Topps</option>
+            <option value="Upper Deck">Upper Deck</option>
+            <option value="Panini">Panini</option>
+            <option value="Bowman">Bowman</option>
+            <option value="Fleer">Fleer</option>
+            <option value="Prizm">Prizm</option>
+        </select>
+    </label><br>
+    <label>Team:
+        <input type="text" name="team">
+    </label><br>
+    <label>Sport:
+        <select name="sport">
+            <option value="Football">Football</option>
+            <option value="Baseball">Baseball</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Hockey">Hockey</option>
+        </select>
+    </label>
+    <label>Card No:
+        <input type="text" name="cardNo">
+    </label><br>
+    <label>Rookie:
+        <input type="checkbox" name="rookie">
+    </label>
+    <label>Quantity:
+        <input type="number" name="quantity" min="1" value="1">
+    </label>
+    <label>Purchase Price
+        <input type="text" name="price" value="$">
+    </label><br>
+    <h3>Grading:</h3>
+    <label>Grading Company:
+        <select name="gradingCo">
+            <option value="PSA">PSA</option>
+            <option value="BGS">BGS</option>
+            <option value="SGC">SGC</option>
+        </select>
+    </label>
+    <label>Grade:
+        <select name="grade">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </label><br>
+    <button type="submit">Add Card</button>
+</form>
+<p><%= errorMsg %></p>
+
+<%- include('./partials/footer') %>

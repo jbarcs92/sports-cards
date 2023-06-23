@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+
+<h1>Card Details</h1>
+<h3>Player: <%= `${card.firstName} ${card.lastName}` %></h3>
+<h3>Year: <%= card.year %></h3>
+<h3>Sport: <%= card.sport %></h3>
+<h3>Team: <%= card.team %></h3>
+<h3>Manufacturer: <%= card.manufacturer %></h3>
+<h3>Card No: <%= card.cardNo %></h3>
+<h3>Rookie: <%= card.rookie ? 'Yes' : 'No' %></h3>
+<h3>Quantity: <%= card.quantity %></h3>
+<h3>Purchase Price: <%= card.price %></h3>
+<h3>Grading Company: <%= card.gradingCo %></h3>
+<h3>Grade: <%= card.grade %></h3>
+
+<%- include('./partials/footer') %>
+
+
