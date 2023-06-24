@@ -4,7 +4,10 @@ module.exports = {
     index,
     show,
     new: newCard,
-    create
+    create,
+    edit,
+    update,
+    delete: deleteCard
 };
 
 async function index(req,res) {
@@ -45,3 +48,30 @@ async function create(req,res) {
     }
 }
 
+async function edit(req,res) {
+    try {
+        const card = await Card.findById(req.params.id);
+        res.render('edit', { card });
+    } catch (err) {
+        console.log(err);
+        res.render('edit', { errorMsg: err.message });
+    }
+}
+
+async function update(req,res) {
+    try {
+        await Card.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect('/');
+    } catch (err) {
+        res.render('/', { errorMsg: err.message });
+    }
+}
+
+async function deleteCard(req,res) {
+    try {
+        await Card.findByIdAndRemove(req.params.id);
+        res.redirect('/');
+    } catch (err) {
+        res.render('/', { errorMsg: err.message });
+    }
+}
