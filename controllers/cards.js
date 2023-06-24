@@ -59,6 +59,7 @@ async function edit(req,res) {
 }
 
 async function update(req,res) {
+    req.body.rookie = !!req.body.rookie;
     try {
         await Card.findByIdAndUpdate(req.params.id, req.body);
         res.redirect('/');

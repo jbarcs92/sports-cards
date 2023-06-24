@@ -39,7 +39,7 @@
         <input type="text" name="cardNo" value=" <%= card.cardNo %>">
     </label><br>
     <label>Rookie:
-        <input type="checkbox" name="rookie">
+        <input type="checkbox" name="rookie" <%=card.rookie ? 'checked' : 'unchecked'%>>
     </label>
     <label>Quantity:
         <input type="number" name="quantity" min="1" value="<%=card.quantity%>">
