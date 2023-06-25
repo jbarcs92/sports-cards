@@ -46,6 +46,12 @@ const cardSchema = new Schema({
     },
     team: {
         type: String,
+    },
+    photoFrontView: {
+        type: String
+    },
+    photoBackView: {
+        type: String
     }
 }, {
     timestamps: true

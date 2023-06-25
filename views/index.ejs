@@ -18,7 +18,7 @@
     <% cards.forEach(function(c) { %>
 
       <tr>
-        <td><a href="/<%= c.id %>"><%= `${c.year} ${c.manufacturer} ${c.firstName} ${c.lastName} ${c.rookie ? 'RC' : ''} ${c.gradingCo} ${c.grade}` %></a></td>
+        <td><%= `${c.year} ${c.manufacturer} ${c.firstName} ${c.lastName} ${c.rookie ? 'RC' : ''} ${c.gradingCo} ${c.grade}` %></td>
         <td><img src="/public/images/<%= c.sport %>.png" alt="<%= c.sport %>" width="25vmin" height="25min"></td>
         <td><%= c.year %></td>
         <td><%= c.manufacturer %></td>
@@ -27,15 +27,20 @@
         <td><%= c.quantity %></td>
         <td><%= c.price %></td>
         <td>
+          <form action="/<%= c.id %>" method="get">
+            <button type="submit">View</button>
+          </form>
+        </td>
+        <td>
           <form action="/<%= c.id %>/edit" method="get">
             <button type="submit">Edit</button>
           </form>
+        </td>
         <td>
           <form
             action="/<%= c.id %>?_method=DELETE"
             method="POST"
-            class="delete-form"
-          >
+            class="delete-form">
             <button type="submit">Delete</button>
           </form>
         </td>
@@ -45,3 +50,4 @@
 </table>
 
 <%- include('./partials/footer') %>
+
