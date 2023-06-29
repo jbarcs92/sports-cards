@@ -1,20 +1,23 @@
 <%- include('./partials/header') %>
 
-<form action="/<%= card.id %>?_method=PUT" method="POST">
+<form action="/<%= card.id %>?_method=PUT" method="POST" id="editForm">
     <h3>Player:</h3>
-    <label>First:
-        <input type="text" name="firstName" value="<%= card.firstName %>">
+    <div id="playerInput">
+    <label>First:<br>
+        <input type="text" name="firstName" value="<%= card.firstName %>" size="25vmin">
     </label><br>
-    <label>Last:
-        <input type="text" name="lastName" value=" <%= card.lastName %>">
+    <label>Last:<br>
+        <input type="text" name="lastName" value=" <%= card.lastName %>" size="25vmin">
     </label><br>
+    </div><br>
     <h3>Card Info:</h3>
-    <label>Year:
-        <input type="text" name="year" value=" <%= card.year %>">
+    <div id="cardInput">
+    <label>Year:<br>
+        <input type="text" name="year" value=" <%= card.year %>" size="10vmin">
     </label>
-    <label>Manufacturer:
+    <label>Manufacturer:<br>
         <select name="manufacturer">
-            <option value="<%=card.manufacturer%>" selected><%=card.manufacturer%></option>
+            <option value="<%=card.manufacturer%>" style="width:13vmin;" selected><%=card.manufacturer%></option>
             <option value="Topps">Topps</option>
             <option value="Upper Deck">Upper Deck</option>
             <option value="Panini">Panini</option>
@@ -23,41 +26,43 @@
             <option value="Prizm">Prizm</option>
         </select>
     </label><br>
-    <label>Team:
-        <input type="text" name="team" value=" <%= card.team %>">
+    <label>Team:<br>
+        <input type="text" name="team" value=" <%= card.team %>" size="26vmin">
     </label><br>
-    <label>Sport:
+    <label>Sport:<br>
         <select name="sport">
-            <option value="<%=card.sport%>" selected><%=card.sport%></option>
+            <option value="<%=card.sport%>" style="width:11vmin;" selected><%=card.sport%></option>
             <option value="Football">Football</option>
             <option value="Baseball">Baseball</option>
             <option value="Basketball">Basketball</option>
             <option value="Hockey">Hockey</option>
         </select>
     </label>
-    <label>Card No:
-        <input type="text" name="cardNo" value=" <%= card.cardNo %>">
+    <label>Card No:<br>
+        <input type="text" name="cardNo" size="12vmin" value=" <%= card.cardNo %>">
     </label><br>
-    <label>Rookie:
+    <label>Rookie:<br>
         <input type="checkbox" name="rookie" <%=card.rookie ? 'checked' : 'unchecked'%>>
     </label>
-    <label>Quantity:
-        <input type="number" name="quantity" min="1" value="<%=card.quantity%>">
+    <label>Quantity:<br>
+        <input type="number" name="quantity" style="width:5vmin;" min="1" value="<%=card.quantity%>">
     </label>
-    <label>Purchase Price
-        <input type="text" name="price" value=" <%= card.price %>">
+    <label>Purchase Price<br>
+        <input type="text" name="price" size="11vmin" value=" <%= card.price %>">
     </label><br>
+    </div><br>
     <h3>Grading:</h3>
-    <label>Grading Company:
-        <select name="gradingCo">
+    <div id="gradingInput">
+    <label>Grading Company:<br>
+        <select name="gradingCo" style="width:15vmin;">
             <option value="<%=card.gradingCo%>"><%=card.gradingCo%></option>
             <option value="PSA">PSA</option>
             <option value="BGS">BGS</option>
             <option value="SGC">SGC</option>
         </select>
     </label>
-    <label>Grade:
-        <select name="grade">
+    <label>Grade:<br>
+        <select name="grade" style="width:7vmin;">
             <option value="<%=card.grade%>"><%=card.grade%></option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -71,7 +76,8 @@
             <option value="10">10</option>
         </select>
     </label><br>
-    <button type="submit">Update Card</button>
+    </div>
+    <button type="submit" id="updateCardBtn">Update Card</button>
 </form>
 
 <%- include('./partials/footer') %>

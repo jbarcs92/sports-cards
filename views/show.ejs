@@ -1,17 +1,56 @@
 <%- include('./partials/header') %>
 
+<div id="viewForm">
 <h1>Card Details</h1>
-<h3>Player: <%= `${card.firstName} ${card.lastName}` %></h3>
-<h3>Year: <%= card.year %></h3>
-<h3>Sport: <%= card.sport %></h3>
-<h3>Team: <%= card.team %></h3>
-<h3>Manufacturer: <%= card.manufacturer %></h3>
-<h3>Card No: <%= card.cardNo %></h3>
-<h3>Rookie: <%= card.rookie ? 'Yes' : 'No' %></h3>
-<h3>Quantity: <%= card.quantity %></h3>
-<h3>Purchase Price: <%= card.price %></h3>
-<h3>Grading Company: <%= card.gradingCo %></h3>
-<h3>Grade: <%= card.grade %></h3><br>
+<table class="table table-striped table-bordered w-auto">
+    <tbody>
+        <tr>
+            <th scope="row">Player:</th>
+            <td><%= `${card.firstName} ${card.lastName}` %></td>
+        </tr>
+        <tr>
+            <th scope="row">Year:</th>
+            <td><%= card.year %></td>
+        </tr>
+        <tr>
+            <th scope="row">Sport:</th>
+            <td><%= card.sport %></td>
+        </tr>
+        <tr>
+            <th scope="row">Team:</th>
+            <td><%= card.team %></td>
+        </tr>
+        <tr>
+            <th scope="row">Manufacturer:</th>
+            <td><%= card.manufacturer %></td>
+        </tr>
+        <tr>
+            <th scope="row">Card No:</th>
+            <td><%= card.cardNo %></td>
+        </tr>
+        <tr>
+            <th scope="row">Rookie:</th>
+            <td><%= card.rookie ? 'Yes' : 'No' %></td>
+        </tr>
+        <tr>
+            <th scope="row">Quantity:</th>
+            <td><%= card.quantity %></td>
+        </tr>
+        <tr>
+            <th scope="row">Purchase Price:</th>
+            <td><%= card.price %></td>
+        </tr>
+        <tr>
+            <th scope="row">Grading Company:</th>
+            <td><%= card.gradingCo %></td>
+        </tr>
+        <tr>
+            <th scope="row">Grade:</th>
+            <td><%= card.grade %></td>
+        </tr>
+    </tbody>
+</table>
+</div>
 
 <%- include('./partials/footer') %>
 

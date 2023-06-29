@@ -1,24 +1,24 @@
 <%- include('./partials/header') %>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Card</th>
-      <th>Sport</th>
-      <th>Year</th>
-      <th>Brand</th>
-      <th>Co.</th>
-      <th>Grade</th>
-      <th>Qty</th>
-      <th>Price</th>
-      <th>Actions</th>
+      <th scope="col">Card</th>
+      <th scope="col">Sport</th>
+      <th scope="col">Year</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Co.</th>
+      <th scope="col">Grade</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Price</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% cards.forEach(function(c) { %>
 
       <tr>
-        <td><%= `${c.year} ${c.manufacturer} ${c.firstName} ${c.lastName} ${c.rookie ? 'RC' : ''} ${c.gradingCo} ${c.grade}` %></td>
+        <th scope="row"><%= `${c.year} ${c.manufacturer} ${c.firstName} ${c.lastName} ${c.rookie ? 'RC' : ''} ${c.gradingCo} ${c.grade}` %></th>
         <td><img src="/public/images/<%= c.sport %>.png" alt="<%= c.sport %>" width="25vmin" height="25min"></td>
         <td><%= c.year %></td>
         <td><%= c.manufacturer %></td>
@@ -26,22 +26,18 @@
         <td><%= c.grade %></td>
         <td><%= c.quantity %></td>
         <td><%= c.price %></td>
-        <td>
+        <td id="actionBtns">
           <form action="/<%= c.id %>" method="get">
-            <button type="submit">View</button>
+            <button type="submit" class="btn btn-outline-success">View</button>
           </form>
-        </td>
-        <td>
           <form action="/<%= c.id %>/edit" method="get">
-            <button type="submit">Edit</button>
+            <button type="submit" class="btn btn-outline-warning">Edit</button>
           </form>
-        </td>
-        <td>
           <form
             action="/<%= c.id %>?_method=DELETE"
             method="POST"
             class="delete-form">
-            <button type="submit">Delete</button>
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
         </td>
       </tr>
